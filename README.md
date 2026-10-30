@@ -172,6 +172,14 @@ and `_b8.txt`.
 * **Hyper-parameters were fixed, not tuned.** A search would likely help slightly.
 
 
+## Dashboard (runs locally)
+
+```bash
+python dashboard/server.py          # then open http://127.0.0.1:8765
+```
+
+The dashboard has a live workbench, where you paste three-address code (or pick an example or a random program), choose the rule budget, and watch the model's pipeline run rule by rule, with the optimized code and a comparison against the best fixed pipeline, the oracle, the textbook order and repeat-until-stable. Below it are the results charts (with a table view), the nine-model comparison, the 16 pipelines the model chooses from, and the safety numbers. It needs no extra packages and only listens on 127.0.0.1. Fonts load from Google Fonts when online and fall back to system fonts offline.
+
 ## Repository layout
 
 ```
@@ -182,6 +190,7 @@ generator.py features.py       programs and the 58 features
 dataset.py train.py evaluate.py data, 9-model comparison, evaluation
 examples/                      demo_chain.tac, demo_large.tac
 data/ models/ results/         portfolios and datasets, trained models, tables and charts
+dashboard/                     local web dashboard (server.py, static/)
 tests/test_all.py              22 tests
 ```
 
