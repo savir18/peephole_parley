@@ -1,0 +1,139 @@
+{
+  "budget": 1,
+  "features": "full",
+  "winner": "Ridge (reg)",
+  "cv": {
+    "Best fixed pipeline": {
+      "mean_cost": 75.03,
+      "mean_regret": 3.55,
+      "optimal_rate": 0.67125,
+      "reduction_pct": 26.882034790235345,
+      "better_than_static": 0.0,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 0.0,
+      "note": "portfolio entry 0 = best single pipeline over all candidates"
+    },
+    "DecisionTree (cls)": {
+      "mean_cost": 71.82875,
+      "mean_regret": 0.34875,
+      "optimal_rate": 0.945625,
+      "reduction_pct": 30.001705403693414,
+      "better_than_static": 0.29875,
+      "worse_than_static": 0.01875,
+      "gain_vs_static": 3.20125,
+      "seconds": 0.1
+    },
+    "RandomForest (cls)": {
+      "mean_cost": 71.620625,
+      "mean_regret": 0.140625,
+      "optimal_rate": 0.953125,
+      "reduction_pct": 30.20452662866052,
+      "better_than_static": 0.29125,
+      "worse_than_static": 0.00125,
+      "gain_vs_static": 3.409375,
+      "seconds": 2.6
+    },
+    "HistGradBoost (cls)": {
+      "mean_cost": 71.558125,
+      "mean_regret": 0.078125,
+      "optimal_rate": 0.968125,
+      "reduction_pct": 30.26543390342542,
+      "better_than_static": 0.305,
+      "worse_than_static": 0.0025,
+      "gain_vs_static": 3.471875,
+      "seconds": 4.0
+    },
+    "LogisticReg (cls)": {
+      "mean_cost": 71.513125,
+      "mean_regret": 0.033125,
+      "optimal_rate": 0.97875,
+      "reduction_pct": 30.309287141256146,
+      "better_than_static": 0.31375,
+      "worse_than_static": 0.003125,
+      "gain_vs_static": 3.516875,
+      "seconds": 0.4
+    },
+    "kNN (cls)": {
+      "mean_cost": 72.1575,
+      "mean_regret": 0.6775,
+      "optimal_rate": 0.859375,
+      "reduction_pct": 29.681333138430055,
+      "better_than_static": 0.21625,
+      "worse_than_static": 0.02625,
+      "gain_vs_static": 2.8725,
+      "seconds": 0.1
+    },
+    "Ridge (reg)": {
+      "mean_cost": 71.48,
+      "mean_regret": 0.0,
+      "optimal_rate": 1.0,
+      "reduction_pct": 30.341567996881537,
+      "better_than_static": 0.32875,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 3.55,
+      "seconds": 0.0
+    },
+    "DecisionTree (reg)": {
+      "mean_cost": 71.653125,
+      "mean_regret": 0.173125,
+      "optimal_rate": 0.94125,
+      "reduction_pct": 30.17285484578277,
+      "better_than_static": 0.298125,
+      "worse_than_static": 0.025625,
+      "gain_vs_static": 3.376875,
+      "seconds": 0.1
+    },
+    "RandomForest (reg)": {
+      "mean_cost": 71.526875,
+      "mean_regret": 0.046875,
+      "optimal_rate": 0.980625,
+      "reduction_pct": 30.295887540807865,
+      "better_than_static": 0.31375,
+      "worse_than_static": 0.00125,
+      "gain_vs_static": 3.503125,
+      "seconds": 6.7
+    },
+    "kNN (reg)": {
+      "mean_cost": 72.071875,
+      "mean_regret": 0.591875,
+      "optimal_rate": 0.87625,
+      "reduction_pct": 29.764776104857958,
+      "better_than_static": 0.23125,
+      "worse_than_static": 0.023125,
+      "gain_vs_static": 2.958125,
+      "seconds": 0.0
+    }
+  },
+  "shallow_tree_cv": {
+    "mean_cost": 71.8975,
+    "mean_regret": 0.4175,
+    "optimal_rate": 0.915625,
+    "reduction_pct": 29.93470740145203,
+    "better_than_static": 0.268125,
+    "worse_than_static": 0.01625,
+    "gain_vs_static": 3.1325
+  },
+  "ablation_winner": {
+    "structural only": {
+      "mean_cost": 72.0375,
+      "mean_regret": 0.5575,
+      "optimal_rate": 0.88125,
+      "reduction_pct": 29.798275105978654,
+      "better_than_static": 0.275,
+      "worse_than_static": 0.060625,
+      "gain_vs_static": 2.9925
+    },
+    "structural + probes": {
+      "mean_cost": 71.48,
+      "mean_regret": 0.0,
+      "optimal_rate": 1.0,
+      "reduction_pct": 30.341567996881537,
+      "better_than_static": 0.32875,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 3.55
+    }
+  },
+  "top_features": null,
+  "portfolio_best_mean_cost": 71.48,
+  "base_mean_cost": 102.615
+}

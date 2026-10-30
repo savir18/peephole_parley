@@ -1,0 +1,15 @@
+budget 7: 1600 training programs, 58 features, 16 pipelines in the portfolio
+portfolio-best mean cost 45.64, best fixed pipeline 46.96, unoptimised 102.61
+  DecisionTree (cls)     cost 47.18  regret 1.544  optimal 57.1%  vs fixed: better 38% worse 19%  (0.1s)
+  RandomForest (cls)     cost 46.70  regret 1.064  optimal 58.0%  vs fixed: better 40% worse 19%  (2.9s)
+  HistGradBoost (cls)    cost 46.69  regret 1.049  optimal 62.2%  vs fixed: better 42% worse 16%  (13.5s)
+  LogisticReg (cls)      cost 46.58  regret 0.939  optimal 61.9%  vs fixed: better 43% worse 15%  (7.3s)
+  kNN (cls)              cost 46.84  regret 1.199  optimal 52.2%  vs fixed: better 35% worse 19%  (0.2s)
+  Ridge (reg)            cost 46.25  regret 0.606  optimal 67.2%  vs fixed: better 43% worse 7%  (0.0s)
+  DecisionTree (reg)     cost 47.11  regret 1.472  optimal 49.6%  vs fixed: better 31% worse 20%  (0.1s)
+  RandomForest (reg)     cost 46.49  regret 0.851  optimal 58.2%  vs fixed: better 33% worse 7%  (8.5s)
+  kNN (reg)              cost 46.63  regret 0.986  optimal 53.2%  vs fixed: better 31% worse 10%  (0.0s)
+winner: Ridge (reg)
+  ablation [structural only] cost 46.28
+  ablation [structural + probes] cost 46.25
+saved model and comparison

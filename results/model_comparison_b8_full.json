@@ -1,0 +1,188 @@
+{
+  "budget": 8,
+  "features": "full",
+  "winner": "RandomForest (reg)",
+  "cv": {
+    "Best fixed pipeline": {
+      "mean_cost": 46.14125,
+      "mean_regret": 0.62625,
+      "optimal_rate": 0.65375,
+      "reduction_pct": 55.03459533206646,
+      "better_than_static": 0.0,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 0.0,
+      "note": "portfolio entry 0 = best single pipeline over all candidates"
+    },
+    "DecisionTree (cls)": {
+      "mean_cost": 46.30375,
+      "mean_regret": 0.78875,
+      "optimal_rate": 0.7425,
+      "reduction_pct": 54.876236417677724,
+      "better_than_static": 0.149375,
+      "worse_than_static": 0.056875,
+      "gain_vs_static": -0.1625,
+      "seconds": 0.1
+    },
+    "RandomForest (cls)": {
+      "mean_cost": 45.98625,
+      "mean_regret": 0.47125,
+      "optimal_rate": 0.755,
+      "reduction_pct": 55.1856453734834,
+      "better_than_static": 0.1225,
+      "worse_than_static": 0.00875,
+      "gain_vs_static": 0.155,
+      "seconds": 3.0
+    },
+    "HistGradBoost (cls)": {
+      "mean_cost": 46.075,
+      "mean_regret": 0.56,
+      "optimal_rate": 0.7725,
+      "reduction_pct": 55.09915704331725,
+      "better_than_static": 0.164375,
+      "worse_than_static": 0.03125,
+      "gain_vs_static": 0.06625,
+      "seconds": 10.3
+    },
+    "LogisticReg (cls)": {
+      "mean_cost": 46.064375,
+      "mean_regret": 0.549375,
+      "optimal_rate": 0.73,
+      "reduction_pct": 55.10951128002728,
+      "better_than_static": 0.124375,
+      "worse_than_static": 0.0325,
+      "gain_vs_static": 0.076875,
+      "seconds": 11.3
+    },
+    "kNN (cls)": {
+      "mean_cost": 46.111875,
+      "mean_regret": 0.596875,
+      "optimal_rate": 0.6825,
+      "reduction_pct": 55.06322175120597,
+      "better_than_static": 0.0475,
+      "worse_than_static": 0.01125,
+      "gain_vs_static": 0.029375,
+      "seconds": 0.2
+    },
+    "Ridge (reg)": {
+      "mean_cost": 45.995,
+      "mean_regret": 0.48,
+      "optimal_rate": 0.731875,
+      "reduction_pct": 55.17711835501633,
+      "better_than_static": 0.15875,
+      "worse_than_static": 0.063125,
+      "gain_vs_static": 0.14625,
+      "seconds": 0.0
+    },
+    "DecisionTree (reg)": {
+      "mean_cost": 46.169375,
+      "mean_regret": 0.654375,
+      "optimal_rate": 0.71625,
+      "reduction_pct": 55.00718705842225,
+      "better_than_static": 0.129375,
+      "worse_than_static": 0.0625,
+      "gain_vs_static": -0.028125,
+      "seconds": 0.1
+    },
+    "RandomForest (reg)": {
+      "mean_cost": 45.96625,
+      "mean_regret": 0.45125,
+      "optimal_rate": 0.746875,
+      "reduction_pct": 55.20513570140817,
+      "better_than_static": 0.125,
+      "worse_than_static": 0.019375,
+      "gain_vs_static": 0.175,
+      "seconds": 9.5
+    },
+    "kNN (reg)": {
+      "mean_cost": 46.14625,
+      "mean_regret": 0.63125,
+      "optimal_rate": 0.683125,
+      "reduction_pct": 55.02972275008526,
+      "better_than_static": 0.09125,
+      "worse_than_static": 0.060625,
+      "gain_vs_static": -0.005,
+      "seconds": 0.0
+    }
+  },
+  "shallow_tree_cv": {
+    "mean_cost": 45.988125,
+    "mean_regret": 0.473125,
+    "optimal_rate": 0.7675,
+    "reduction_pct": 55.18381815524046,
+    "better_than_static": 0.14375,
+    "worse_than_static": 0.0175,
+    "gain_vs_static": 0.153125
+  },
+  "ablation_winner": {
+    "structural only": {
+      "mean_cost": 45.964375,
+      "mean_regret": 0.449375,
+      "optimal_rate": 0.74875,
+      "reduction_pct": 55.206962919651126,
+      "better_than_static": 0.1275,
+      "worse_than_static": 0.023125,
+      "gain_vs_static": 0.176875
+    },
+    "structural + probes": {
+      "mean_cost": 45.96625,
+      "mean_regret": 0.45125,
+      "optimal_rate": 0.746875,
+      "reduction_pct": 55.20513570140817,
+      "better_than_static": 0.125,
+      "worse_than_static": 0.019375,
+      "gain_vs_static": 0.175
+    }
+  },
+  "top_features": [
+    [
+      "n_asg_const",
+      0.13753601451256164
+    ],
+    [
+      "n_instr",
+      0.06988215420961799
+    ],
+    [
+      "gain_textbook_frac",
+      0.0648475009495263
+    ],
+    [
+      "n_temps",
+      0.0508562973454518
+    ],
+    [
+      "n_copy_used",
+      0.03362812497911918
+    ],
+    [
+      "gain_CF_then_DCE",
+      0.03204240711583859
+    ],
+    [
+      "frac_mul_div",
+      0.030352719721151708
+    ],
+    [
+      "n_labels",
+      0.029159615054015067
+    ],
+    [
+      "n_mul",
+      0.026580678615341753
+    ],
+    [
+      "n_add",
+      0.026008325694325082
+    ],
+    [
+      "n_and",
+      0.025989357205875863
+    ],
+    [
+      "n_bin_var_var",
+      0.024685054972499263
+    ]
+  ],
+  "portfolio_best_mean_cost": 45.515,
+  "base_mean_cost": 102.615
+}

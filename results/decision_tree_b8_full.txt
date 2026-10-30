@@ -1,0 +1,67 @@
+Depth-4 decision tree (budget 8). Leaves are portfolio indices.
+Cross-validated mean cost 45.99 (best fixed pipeline 46.14)
+
+Portfolio:
+   0: AS > RA > CP > CF > DCE > RS > CSE > SR
+   1: CF > RA > CP > AS > DCE > CSE > RS > SR
+   2: AS > CSE > CP > RA > SR > CF > DCE > RS
+   3: RS > CP > CF > RA > AS > DCE > SR > CSE
+   4: AS > CF > CSE > RS > CP > SR > RA > DCE
+   5: RA > CF > DCE > CP > SR > RS > AS > CSE
+   6: CF > AS > RS > CP > RA > DCE > CSE > SR
+   7: RA > CSE > CF > RS > CP > SR > AS > DCE
+   8: AS > RS > RA > DCE > CP > CF > SR > CSE
+   9: RA > CP > AS > CF > SR > DCE > CSE > RS
+  10: AS > RS > SR > CSE > RA > CP > CF > DCE
+  11: RA > CF > AS > CP > DCE > RS > SR > CSE
+  12: AS > CSE > CF > CP > RA > SR > DCE > RS
+  13: SR > AS > RS > CP > RA > DCE > CSE > CF
+  14: CSE > CF > SR > RS > CP > RA > AS > DCE
+  15: CF > AS > SR > CP > RA > CSE > RS > DCE
+
+|--- n_bin_const_const <= 0.50
+|   |--- gain_CSE <= 0.50
+|   |   |--- n_copy_used <= 8.50
+|   |   |   |--- n_copy_used <= 1.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_copy_used >  1.50
+|   |   |   |   |--- class: 0
+|   |   |--- n_copy_used >  8.50
+|   |   |   |--- gain_textbook_frac <= 0.42
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_textbook_frac >  0.42
+|   |   |   |   |--- class: 9
+|   |--- gain_CSE >  0.50
+|   |   |--- gain_CSE <= 3.50
+|   |   |   |--- gain_SR <= 35.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_SR >  35.50
+|   |   |   |   |--- class: 0
+|   |   |--- gain_CSE >  3.50
+|   |   |   |--- gain_textbook_frac <= 0.55
+|   |   |   |   |--- class: 2
+|   |   |   |--- gain_textbook_frac >  0.55
+|   |   |   |   |--- class: 0
+|--- n_bin_const_const >  0.50
+|   |--- n_asg_const <= 0.50
+|   |   |--- gain_CSE <= 0.50
+|   |   |   |--- gain_textbook_frac <= 0.53
+|   |   |   |   |--- class: 11
+|   |   |   |--- gain_textbook_frac >  0.53
+|   |   |   |   |--- class: 11
+|   |   |--- gain_CSE >  0.50
+|   |   |   |--- n_mul <= 7.50
+|   |   |   |   |--- class: 12
+|   |   |   |--- n_mul >  7.50
+|   |   |   |   |--- class: 11
+|   |--- n_asg_const >  0.50
+|   |   |--- n_if <= 0.50
+|   |   |   |--- gain_SR <= 12.50
+|   |   |   |   |--- class: 11
+|   |   |   |--- gain_SR >  12.50
+|   |   |   |   |--- class: 0
+|   |   |--- n_if >  0.50
+|   |   |   |--- gain_CF <= 3.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_CF >  3.50
+|   |   |   |   |--- class: 0

@@ -1,0 +1,67 @@
+Depth-4 decision tree (budget 4). Leaves are portfolio indices.
+Cross-validated mean cost 53.36 (best fixed pipeline 53.92)
+
+Portfolio:
+   0: CP > CF > SR > DCE
+   1: AS > RA > SR > DCE
+   2: AS > CP > CF > DCE
+   3: RA > CP > CF > DCE
+   4: AS > CP > SR > DCE
+   5: RA > CP > SR > DCE
+   6: CF > CP > SR > DCE
+   7: CF > RA > SR > DCE
+   8: AS > SR > RS > DCE
+   9: CP > SR > DCE > CSE
+  10: CF > AS > SR > DCE
+  11: CF > CP > AS > DCE
+  12: AS > CP > RA > DCE
+  13: CP > CF > DCE > RS
+  14: RA > SR > RS > DCE
+  15: AS > CP > DCE > CSE
+
+|--- n_chain_pairs <= 1.50
+|   |--- gain_AS <= 0.50
+|   |   |--- n_bin_const_const <= 0.50
+|   |   |   |--- n_chain_pairs <= 0.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_chain_pairs >  0.50
+|   |   |   |   |--- class: 5
+|   |   |--- n_bin_const_const >  0.50
+|   |   |   |--- n_asg_const <= 0.50
+|   |   |   |   |--- class: 6
+|   |   |   |--- n_asg_const >  0.50
+|   |   |   |   |--- class: 0
+|   |--- gain_AS >  0.50
+|   |   |--- gain_CF <= 0.50
+|   |   |   |--- n_copy_used <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_copy_used >  0.50
+|   |   |   |   |--- class: 4
+|   |   |--- gain_CF >  0.50
+|   |   |   |--- gain_SR <= 1.50
+|   |   |   |   |--- class: 11
+|   |   |   |--- gain_SR >  1.50
+|   |   |   |   |--- class: 0
+|--- n_chain_pairs >  1.50
+|   |--- gain_AS <= 2.50
+|   |   |--- gain_CF <= 0.50
+|   |   |   |--- n_copy_used <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_copy_used >  0.50
+|   |   |   |   |--- class: 5
+|   |   |--- gain_CF >  0.50
+|   |   |   |--- n_copy_used <= 1.50
+|   |   |   |   |--- class: 7
+|   |   |   |--- n_copy_used >  1.50
+|   |   |   |   |--- class: 0
+|   |--- gain_AS >  2.50
+|   |   |--- n_copy_used <= 1.50
+|   |   |   |--- n_instr <= 49.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_instr >  49.50
+|   |   |   |   |--- class: 1
+|   |   |--- n_copy_used >  1.50
+|   |   |   |--- gain_SR <= 9.50
+|   |   |   |   |--- class: 12
+|   |   |   |--- gain_SR >  9.50
+|   |   |   |   |--- class: 1

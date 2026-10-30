@@ -1,0 +1,67 @@
+Depth-4 decision tree (budget 5). Leaves are portfolio indices.
+Cross-validated mean cost 49.53 (best fixed pipeline 50.65)
+
+Portfolio:
+   0: RA > CP > CF > DCE > SR
+   1: CP > SR > CF > AS > DCE
+   2: AS > CP > RA > SR > DCE
+   3: CF > CP > SR > DCE > CSE
+   4: CP > SR > CF > DCE > RS
+   5: RA > AS > CP > CF > DCE
+   6: RA > AS > RS > DCE > SR
+   7: CF > CP > AS > DCE > SR
+   8: AS > CP > SR > DCE > CSE
+   9: RA > CF > CP > DCE > SR
+  10: CP > CF > SR > DCE > CSE
+  11: CSE > RA > CP > SR > DCE
+  12: CSE > AS > CP > CF > DCE
+  13: AS > CF > RA > DCE > SR
+  14: AS > RS > CP > SR > DCE
+  15: CF > CP > AS > DCE > CSE
+
+|--- gain_AS <= 0.50
+|   |--- n_bin_const_const <= 0.50
+|   |   |--- gain_RS <= 1.50
+|   |   |   |--- gain_CSE <= 0.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_CSE >  0.50
+|   |   |   |   |--- class: 4
+|   |   |--- gain_RS >  1.50
+|   |   |   |--- n_chain_pairs <= 0.50
+|   |   |   |   |--- class: 4
+|   |   |   |--- n_chain_pairs >  0.50
+|   |   |   |   |--- class: 0
+|   |--- n_bin_const_const >  0.50
+|   |   |--- n_asg_const <= 0.50
+|   |   |   |--- n_and <= 1.50
+|   |   |   |   |--- class: 9
+|   |   |   |--- n_and >  1.50
+|   |   |   |   |--- class: 9
+|   |   |--- n_asg_const >  0.50
+|   |   |   |--- n_chain_pairs <= 0.50
+|   |   |   |   |--- class: 4
+|   |   |   |--- n_chain_pairs >  0.50
+|   |   |   |   |--- class: 0
+|--- gain_AS >  0.50
+|   |--- gain_CF <= 0.50
+|   |   |--- n_asg_const <= 0.50
+|   |   |   |--- gain_RS <= 1.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- gain_RS >  1.50
+|   |   |   |   |--- class: 6
+|   |   |--- n_asg_const >  0.50
+|   |   |   |--- n_chain_pairs <= 1.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_chain_pairs >  1.50
+|   |   |   |   |--- class: 0
+|   |--- gain_CF >  0.50
+|   |   |--- n_chain_pairs <= 1.50
+|   |   |   |--- n_bin_const_const <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_bin_const_const >  0.50
+|   |   |   |   |--- class: 7
+|   |   |--- n_chain_pairs >  1.50
+|   |   |   |--- n_asg_const <= 0.50
+|   |   |   |   |--- class: 9
+|   |   |   |--- n_asg_const >  0.50
+|   |   |   |   |--- class: 0

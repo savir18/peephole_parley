@@ -1,0 +1,827 @@
+Phase-ordering examples, budget 4: programs where the best fixed pipeline is furthest from the per-program optimum.
+Best fixed pipeline: CP > CF > SR > DCE
+
+======================================================================
+test seed 200308: unoptimised cost 238
+  fixed pipeline  [CP > CF > SR > DCE] -> cost 155
+  best pipeline   [AS > RA > SR > DCE] -> cost 122
+  ML pipeline     [AS > RA > SR > DCE] -> cost 122
+
+--- original ---
+    t1 = a + 10
+    t2 = t1 + 11
+    s = t2 - 14
+    n = q
+    q = n
+    u = c % 4
+L1:
+    t3 = d + d
+    y = t3 + 9
+    t4 = d + d
+    q = t4 + 3
+    t5 = a + 20
+    t6 = t5 - 7
+    w = t6 - 1
+    t7 = d * 64
+    t8 = t7 * 2
+    n = t8 + 1
+    u = b + 4
+    t9 = q + 17
+    t10 = t9 - 4
+    s = t10 - 13
+    t11 = c * b
+    z = a - a
+    n = n * a
+    r = d + q
+    v = d + d
+    v = a - a
+    u = t11 + 6
+    p = z * n
+    z = r + a
+    z = r - a
+    t12 = b * c
+    s = t12 + 9
+L2:
+    t13 = y - a
+    m = t13 + 8
+    w = c * b
+    u = c + u
+    s = n + b
+    p = v + c
+    u = c & c
+    w = d - s
+    n = d & c
+    v = d * v
+    t14 = y - a
+    x = t14 + 3
+    t15 = w - p
+    v = c - b
+    n = d - c
+    u = m * c
+    y = t15 + 1
+    v = d + q
+    z = v + n
+    z = b * u
+    q = v * c
+    q = d * r
+    r = d + c
+    z = c - b
+    u = q & c
+    t16 = w
+    t17 = t16 - p
+    s = t17 + 4
+    s = s
+    t18 = x + 8
+    t19 = t18 - 14
+    u = t19 + 19
+    x = p + 0
+    t20 = q + 7
+    t21 = t20 - 11
+    r = t21 + 7
+    t22 = a + 13
+    t23 = t22 + 15
+    v = t23 + 19
+L3:
+    q = b * 9
+    t24 = b * c
+    x = t24 + 6
+    y = y * d
+    p = a * w
+    r = a + q
+    t25 = b
+    t26 = c * t25
+    u = t26 + 9
+    n = q % 16
+    t27 = d + 3
+    t28 = t27 + 2
+    y = t28 - 14
+    q = b / 1
+    t29 = d + c
+    x = b - a
+    m = a - a
+    w = a * m
+    s = t29 + 7
+    t30 = d
+    t31 = t30 + c
+    p = t31 + 1
+Lend:
+    print z
+    print s
+    print u
+    print q
+
+--- after fixed pipeline ---
+    t1 = a + 10
+    t2 = t1 + 11
+    s = t2 - 14
+    n = q
+    q = q
+    u = c & 3
+L1:
+    t3 = d + d
+    y = t3 + 9
+    t4 = d + d
+    q = t4 + 3
+    t5 = a + 20
+    t6 = t5 - 7
+    w = t6 - 1
+    t7 = d << 6
+    t8 = t7 << 1
+    n = t8 + 1
+    t11 = c * b
+    z = a - a
+    n = n * a
+    r = d + q
+    v = a - a
+    u = t11 + 6
+    p = z * n
+    z = r - a
+    t12 = b * c
+    s = t12 + 9
+L2:
+    t13 = y - a
+    m = t13 + 8
+    s = n + b
+    p = v + c
+    w = d - s
+    t14 = y - a
+    x = t14 + 3
+    t15 = w - p
+    n = d - c
+    y = t15 + 1
+    q = d * r
+    z = c - b
+    t17 = w - p
+    s = t17 + 4
+    s = s
+    t18 = x + 8
+    t19 = t18 - 14
+    u = t19 + 19
+    x = p + 0
+    t20 = q + 7
+    t21 = t20 - 11
+    r = t21 + 7
+    t22 = a + 13
+    t23 = t22 + 15
+    v = t23 + 19
+L3:
+    q = b * 9
+    r = a + q
+    t26 = c * b
+    u = t26 + 9
+    n = q & 15
+    t27 = d + 3
+    t28 = t27 + 2
+    y = t28 - 14
+    q = b / 1
+    t29 = d + c
+    x = b - a
+    m = a - a
+    w = a * m
+    s = t29 + 7
+    t31 = d + c
+    p = t31 + 1
+Lend:
+    print z
+    print s
+    print u
+    print q
+
+--- after best pipeline ---
+    s = a + 7
+    n = q
+    q = n
+    u = c & 3
+L1:
+    t3 = d + d
+    y = t3 + 9
+    t4 = d + d
+    q = t4 + 3
+    w = a + 12
+    t8 = d << 7
+    n = t8 + 1
+    t11 = c * b
+    z = 0
+    n = n * a
+    r = d + q
+    v = 0
+    u = t11 + 6
+    p = z * n
+    z = r - a
+    t12 = b * c
+    s = t12 + 9
+L2:
+    t13 = y - a
+    m = t13 + 8
+    s = n + b
+    p = v + c
+    w = d - s
+    t14 = y - a
+    x = t14 + 3
+    t15 = w - p
+    n = d - c
+    y = t15 + 1
+    q = d * r
+    z = c - b
+    t16 = w
+    t17 = t16 - p
+    s = t17 + 4
+    s = s
+    u = x + 13
+    x = p
+    r = q + 3
+    v = a + 47
+L3:
+    q = b * 9
+    r = a + q
+    t25 = b
+    t26 = c * t25
+    u = t26 + 9
+    n = q & 15
+    y = d - 9
+    q = b
+    t29 = d + c
+    x = b - a
+    m = 0
+    w = a * m
+    s = t29 + 7
+    t30 = d
+    t31 = t30 + c
+    p = t31 + 1
+Lend:
+    print z
+    print s
+    print u
+    print q
+
+======================================================================
+test seed 200270: unoptimised cost 164
+  fixed pipeline  [CP > CF > SR > DCE] -> cost 115
+  best pipeline   [AS > RA > SR > DCE] -> cost 87
+  ML pipeline     [AS > RA > SR > DCE] -> cost 87
+
+--- original ---
+    w = w
+    t1 = b * 16
+    t2 = t1 * 64
+    q = t2 + 1
+    t3 = c * 7
+    t4 = t3 * 5
+    m = t4 + 0
+    t5 = c * c
+    t6 = t5 * 4
+    t7 = a * c
+    y = q & d
+    q = b * b
+    u = u - w
+    q = m - m
+    m = m * b
+    p = u * p
+    v = q + p
+    x = d & x
+    n = t7 + 3
+    m = p - x
+    x = x * m
+    p = d * d
+    t8 = a
+    t9 = t8 * c
+    z = t9 + 4
+L1:
+    z = d + m
+    t10 = a * 8
+    t11 = t10 * 16
+    x = t11 + 1
+    s = d & 3
+    t12 = d + 19
+    t13 = t12 - 11
+    n = t13 + 12
+    t14 = z * 7
+    p = t14 * 10
+    t15 = m & b
+    u = n * d
+    v = n + c
+    n = a + q
+    s = t15 + 9
+    t16 = m & b
+    p = t16 + 5
+    t17 = m + 8
+    t18 = t17 - 9
+    q = t18 - 18
+L2:
+    t19 = b + 17
+    t20 = t19 - 14
+    u = t20 + 4
+    m = y
+    y = m
+L3:
+    p = a * 64
+    t21 = c + v
+    t22 = t21 * 3
+    n = d * c
+    w = d * 13
+    if d != b goto Lend
+    p = p
+    t23 = d + 13
+    t24 = t23 - 7
+    p = t24 - 9
+Lend:
+    print v
+    print y
+    print u
+    print m
+    print z
+
+--- after fixed pipeline ---
+    w = w
+    t1 = b << 4
+    t2 = t1 << 6
+    q = t2 + 1
+    t3 = c * 7
+    t4 = t3 * 5
+    m = t4 + 0
+    t7 = a * c
+    y = q & d
+    u = u - w
+    q = m - m
+    p = u * p
+    v = q + p
+    x = d & x
+    n = t7 + 3
+    m = p - x
+    x = x * m
+    p = d * d
+    t9 = a * c
+    z = t9 + 4
+L1:
+    z = d + m
+    t10 = a << 3
+    t11 = t10 << 4
+    x = t11 + 1
+    t12 = d + 19
+    t13 = t12 - 11
+    n = t13 + 12
+    t15 = m & b
+    u = n * d
+    v = n + c
+    n = a + q
+    s = t15 + 9
+    t16 = m & b
+    p = t16 + 5
+    t17 = m + 8
+    t18 = t17 - 9
+    q = t18 - 18
+L2:
+    t19 = b + 17
+    t20 = t19 - 14
+    u = t20 + 4
+    m = y
+    y = y
+L3:
+    p = a << 6
+    n = d * c
+    w = d * 13
+    if d != b goto Lend
+    t23 = d + 13
+    t24 = t23 - 7
+    p = t24 - 9
+Lend:
+    print v
+    print y
+    print u
+    print m
+    print z
+
+--- after best pipeline ---
+    w = w
+    t2 = b << 10
+    q = t2 + 1
+    t7 = a * c
+    y = q & d
+    u = u - w
+    q = 0
+    p = u * p
+    v = q + p
+    x = d & x
+    n = t7 + 3
+    m = p - x
+    x = x * m
+    p = d * d
+    t8 = a
+    t9 = t8 * c
+    z = t9 + 4
+L1:
+    z = d + m
+    t11 = a << 7
+    x = t11 + 1
+    n = d + 20
+    t15 = m & b
+    u = n * d
+    v = n + c
+    n = a + q
+    s = t15 + 9
+    t16 = m & b
+    p = t16 + 5
+    q = m - 19
+L2:
+    u = b + 7
+    m = y
+    y = m
+L3:
+    p = a << 6
+    n = d * c
+    w = d * 13
+    if d != b goto Lend
+    p = d - 3
+Lend:
+    print v
+    print y
+    print u
+    print m
+    print z
+
+======================================================================
+test seed 200167: unoptimised cost 199
+  fixed pipeline  [CP > CF > SR > DCE] -> cost 135
+  best pipeline   [AS > CP > RA > DCE] -> cost 110
+  ML pipeline     [AS > CP > RA > DCE] -> cost 110
+
+--- original ---
+    t1 = a + 13
+    t2 = t1 + 19
+    z = t2 - 15
+    t3 = b
+    v = z + c
+    w = a - a
+    q = a * a
+    n = v * c
+    r = z + c
+    m = t3 - d
+    t4 = v + 4
+    t5 = t4 - 14
+    z = t5 - 5
+    t6 = z
+    x = n & c
+    q = t6 + a
+    if a > w goto L1
+    t7 = w
+    t8 = t7
+    t9 = t8
+    v = z & v
+    y = a * x
+    n = d - c
+    m = y & x
+    u = z & b
+    y = y - m
+    m = x + q
+    m = d & d
+    s = t9 + r
+    t10 = q + 17
+    t11 = t10 + 11
+    z = t11 + 2
+    t12 = b
+    t13 = t12
+    t14 = t13
+    x = n + x
+    r = c & c
+    y = t14 + a
+L1:
+    x = q / 8
+    m = y - n
+    m = d - 2
+    x = d / 1
+    m = b + 24
+    m = q * 100
+    if c != z goto L2
+L2:
+    t15 = c + 13
+    t16 = t15 - 4
+    v = t16 + 16
+    if d > b goto L3
+    t17 = q + 8
+    t18 = t17 - 13
+    r = t18 - 4
+    m = r % 64
+    t19 = s
+    p = t19 - b
+    n = c * 9
+L3:
+    t20 = d
+    t21 = t20
+    m = p * b
+    s = t21 - y
+    t22 = p
+    t23 = t22
+    s = b + n
+    m = d + d
+    x = c & c
+    x = b - d
+    m = m & b
+    v = d - q
+    y = m & v
+    u = c * b
+    w = t23 + a
+    t24 = b - c
+    q = y - m
+    z = d * d
+    r = d - a
+    p = t24 + 4
+    s = a - a
+    z = z & d
+    z = d - z
+    r = m - d
+    q = a - q
+    r = d * r
+    u = d + d
+    s = s + q
+    t25 = b - c
+    w = t25 + 9
+Lend:
+    print s
+    print u
+    print w
+    print v
+
+--- after fixed pipeline ---
+    t1 = a + 13
+    t2 = t1 + 19
+    z = t2 - 15
+    v = z + c
+    w = a - a
+    n = v * c
+    r = z + c
+    m = b - d
+    t4 = v + 4
+    t5 = t4 - 14
+    z = t5 - 5
+    x = n & c
+    q = z + a
+    if a > w goto L1
+    t9 = w
+    v = z & v
+    n = d - c
+    u = z & b
+    m = d & d
+    s = t9 + r
+    t10 = q + 17
+    t11 = t10 + 11
+    z = t11 + 2
+    x = n + x
+    r = c & c
+    y = b + a
+L1:
+    x = d / 1
+    m = q * 100
+    if c != z goto L2
+L2:
+    t15 = c + 13
+    t16 = t15 - 4
+    v = t16 + 16
+    if d > b goto L3
+    t17 = q + 8
+    t18 = t17 - 13
+    r = t18 - 4
+    m = r & 63
+    p = s - b
+    n = c * 9
+L3:
+    m = d + d
+    x = b - d
+    m = m & b
+    v = d - q
+    y = m & v
+    t24 = b - c
+    q = y - m
+    z = d * d
+    p = t24 + 4
+    s = a - a
+    z = z & d
+    z = d - z
+    r = m - d
+    q = a - q
+    r = d * r
+    u = d + d
+    s = s + q
+    t25 = b - c
+    w = t25 + 9
+Lend:
+    print s
+    print u
+    print w
+    print v
+
+--- after best pipeline ---
+    z = a + 17
+    v = z + c
+    w = 0
+    n = v * c
+    r = z + c
+    m = b - d
+    z = v - 15
+    x = n & c
+    q = z + a
+    if a > w goto L1
+    t9 = w
+    v = z & v
+    n = d - c
+    u = z & b
+    m = d
+    s = t9 + r
+    z = q + 30
+    x = n + x
+    r = c
+    y = b + a
+L1:
+    x = d
+    m = q * 100
+    if c != z goto L2
+L2:
+    v = c + 25
+    if d > b goto L3
+    r = q - 9
+    m = r % 64
+    p = s - b
+    n = c * 9
+L3:
+    m = d + d
+    x = b - d
+    m = m & b
+    v = d - q
+    y = m & v
+    t24 = b - c
+    q = y - m
+    z = d * d
+    p = t24 + 4
+    s = 0
+    z = z & d
+    z = d - z
+    r = m - d
+    q = a - q
+    r = d * r
+    u = d + d
+    s = s + q
+    t25 = b - c
+    w = t25 + 9
+Lend:
+    print s
+    print u
+    print w
+    print v
+
+======================================================================
+test seed 200176: unoptimised cost 164
+  fixed pipeline  [CP > CF > SR > DCE] -> cost 93
+  best pipeline   [AS > RA > SR > DCE] -> cost 69
+  ML pipeline     [AS > RA > SR > DCE] -> cost 69
+
+--- original ---
+    if 4 > 7 goto Lend
+    n = d + 0
+    t1 = b + 4
+    t2 = t1 + 8
+    w = t2 + 14
+    t3 = c + 9
+    t4 = t3 - 11
+    w = t4 + 8
+    t5 = d
+    t6 = t5
+    t7 = t6
+    q = n * c
+    u = w - c
+    p = c & w
+    s = c - c
+    q = q * p
+    m = a - c
+    q = b * c
+    v = b + n
+    x = t7 - d
+    v = b * 0
+    t8 = d * 4
+    n = t8 * 16
+    y = u + d
+    x = b * s
+    x = c - c
+    y = a * 5
+L1:
+    if a >= 13 goto L3
+    y = c + 0
+    z = c * 3
+    s = x * 1
+    p = d / 1
+    t9 = 16
+    x = n & x
+    z = d & d
+    q = z & b
+    s = u * b
+    z = b * p
+    n = p * b
+    n = b & u
+    m = a + a
+    r = c + t9
+L2:
+    if b < 11 goto L3
+    x = c
+    x = c
+    t10 = q & a
+    y = s * y
+    p = t10 + 1
+    s = r + x
+    s = r - c
+    t11 = q
+    t12 = a & t11
+    n = t12 + 7
+    t13 = c * 64
+    p = t13 * 8
+    s = x * 5
+L3:
+    x = d % 8
+    v = c / 1
+Lend:
+    print n
+    print m
+    print x
+
+--- after fixed pipeline ---
+    t3 = c + 9
+    t4 = t3 - 11
+    w = t4 + 8
+    u = w - c
+    p = c & w
+    s = c - c
+    m = a - c
+    q = b * c
+    v = b * 0
+    t8 = d << 2
+    n = t8 << 4
+    x = c - c
+    y = a * 5
+L1:
+    if a >= 13 goto L3
+    y = c + 0
+    p = d / 1
+    t9 = 16
+    x = n & x
+    z = d & d
+    q = z & b
+    s = u * b
+    z = b * p
+    n = b & u
+    m = a + a
+    r = c + t9
+L2:
+    if b < 11 goto L3
+    x = c
+    y = s * y
+    t12 = a & q
+    n = t12 + 7
+    t13 = c << 6
+    p = t13 << 3
+    s = x * 5
+L3:
+    x = d & 7
+    v = c / 1
+Lend:
+    print n
+    print m
+    print x
+
+--- after best pipeline ---
+    if 4 > 7 goto Lend
+    w = c + 6
+    u = w - c
+    p = c & w
+    s = 0
+    m = a - c
+    q = b * c
+    v = 0
+    n = d << 6
+    x = 0
+    y = a * 5
+L1:
+    if a >= 13 goto L3
+    y = c
+    p = d
+    t9 = 16
+    x = n & x
+    z = d
+    q = z & b
+    s = u * b
+    z = b * p
+    n = b & u
+    m = a + a
+    r = c + t9
+L2:
+    if b < 11 goto L3
+    x = c
+    y = s * y
+    t11 = q
+    t12 = a & t11
+    n = t12 + 7
+    p = c << 9
+    s = x * 5
+L3:
+    x = d & 7
+    v = c
+Lend:
+    print n
+    print m
+    print x

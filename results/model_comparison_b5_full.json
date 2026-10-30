@@ -1,0 +1,139 @@
+{
+  "budget": 5,
+  "features": "full",
+  "winner": "Ridge (reg)",
+  "cv": {
+    "Best fixed pipeline": {
+      "mean_cost": 50.6525,
+      "mean_regret": 3.31375,
+      "optimal_rate": 0.238125,
+      "reduction_pct": 50.63830823953612,
+      "better_than_static": 0.0,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 0.0,
+      "note": "portfolio entry 0 = best single pipeline over all candidates"
+    },
+    "DecisionTree (cls)": {
+      "mean_cost": 49.78,
+      "mean_regret": 2.44125,
+      "optimal_rate": 0.46375,
+      "reduction_pct": 51.4885737952541,
+      "better_than_static": 0.468125,
+      "worse_than_static": 0.15,
+      "gain_vs_static": 0.8725,
+      "seconds": 0.1
+    },
+    "RandomForest (cls)": {
+      "mean_cost": 49.01125,
+      "mean_regret": 1.6725,
+      "optimal_rate": 0.521875,
+      "reduction_pct": 52.23773327486235,
+      "better_than_static": 0.495,
+      "worse_than_static": 0.054375,
+      "gain_vs_static": 1.64125,
+      "seconds": 2.9
+    },
+    "HistGradBoost (cls)": {
+      "mean_cost": 49.018125,
+      "mean_regret": 1.679375,
+      "optimal_rate": 0.551875,
+      "reduction_pct": 52.23103347463821,
+      "better_than_static": 0.529375,
+      "worse_than_static": 0.084375,
+      "gain_vs_static": 1.634375,
+      "seconds": 13.3
+    },
+    "LogisticReg (cls)": {
+      "mean_cost": 48.763125,
+      "mean_regret": 1.424375,
+      "optimal_rate": 0.568125,
+      "reduction_pct": 52.47953515567899,
+      "better_than_static": 0.535,
+      "worse_than_static": 0.084375,
+      "gain_vs_static": 1.889375,
+      "seconds": 6.6
+    },
+    "kNN (cls)": {
+      "mean_cost": 50.2475,
+      "mean_regret": 2.90875,
+      "optimal_rate": 0.371875,
+      "reduction_pct": 51.03298738001266,
+      "better_than_static": 0.336875,
+      "worse_than_static": 0.145,
+      "gain_vs_static": 0.405,
+      "seconds": 0.2
+    },
+    "Ridge (reg)": {
+      "mean_cost": 48.248125,
+      "mean_regret": 0.909375,
+      "optimal_rate": 0.616875,
+      "reduction_pct": 52.98141109974175,
+      "better_than_static": 0.584375,
+      "worse_than_static": 0.045,
+      "gain_vs_static": 2.404375,
+      "seconds": 0.0
+    },
+    "DecisionTree (reg)": {
+      "mean_cost": 50.15875,
+      "mean_regret": 2.82,
+      "optimal_rate": 0.33875,
+      "reduction_pct": 51.11947571017883,
+      "better_than_static": 0.386875,
+      "worse_than_static": 0.18375,
+      "gain_vs_static": 0.49375,
+      "seconds": 0.1
+    },
+    "RandomForest (reg)": {
+      "mean_cost": 48.964375,
+      "mean_regret": 1.625625,
+      "optimal_rate": 0.42625,
+      "reduction_pct": 52.283413730936026,
+      "better_than_static": 0.430625,
+      "worse_than_static": 0.04375,
+      "gain_vs_static": 1.688125,
+      "seconds": 8.8
+    },
+    "kNN (reg)": {
+      "mean_cost": 49.386875,
+      "mean_regret": 2.048125,
+      "optimal_rate": 0.41125,
+      "reduction_pct": 51.87168055352531,
+      "better_than_static": 0.396875,
+      "worse_than_static": 0.1,
+      "gain_vs_static": 1.265625,
+      "seconds": 0.0
+    }
+  },
+  "shallow_tree_cv": {
+    "mean_cost": 49.526875,
+    "mean_regret": 2.188125,
+    "optimal_rate": 0.466875,
+    "reduction_pct": 51.73524825805194,
+    "better_than_static": 0.465,
+    "worse_than_static": 0.086875,
+    "gain_vs_static": 1.125625
+  },
+  "ablation_winner": {
+    "structural only": {
+      "mean_cost": 48.390625,
+      "mean_regret": 1.051875,
+      "optimal_rate": 0.5725,
+      "reduction_pct": 52.84254251327778,
+      "better_than_static": 0.561875,
+      "worse_than_static": 0.056875,
+      "gain_vs_static": 2.261875
+    },
+    "structural + probes": {
+      "mean_cost": 48.248125,
+      "mean_regret": 0.909375,
+      "optimal_rate": 0.616875,
+      "reduction_pct": 52.98141109974175,
+      "better_than_static": 0.584375,
+      "worse_than_static": 0.045,
+      "gain_vs_static": 2.404375
+    }
+  },
+  "top_features": null,
+  "portfolio_best_mean_cost": 47.33875,
+  "base_mean_cost": 102.615
+}

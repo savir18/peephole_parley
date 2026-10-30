@@ -1,0 +1,67 @@
+Depth-4 decision tree (budget 2). Leaves are portfolio indices.
+Cross-validated mean cost 62.31 (best fixed pipeline 63.77)
+
+Portfolio:
+   0: SR > DCE
+   1: CF > DCE
+   2: RA > DCE
+   3: AS > DCE
+   4: CP > DCE
+   5: AS > SR
+   6: CF > SR
+   7: RS > DCE
+   8: CP > SR
+   9: SR > RS
+  10: DCE > CSE
+  11: CF > AS
+  12: AS > RS
+  13: DCE > RS
+  14: SR > CSE
+  15: CP > CF
+
+|--- gain_SR <= 6.50
+|   |--- n_chain_pairs <= 1.50
+|   |   |--- n_if_const <= 0.50
+|   |   |   |--- gain_AS <= 4.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_AS >  4.50
+|   |   |   |   |--- class: 3
+|   |   |--- n_if_const >  0.50
+|   |   |   |--- shrink_RS <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- shrink_RS >  0.50
+|   |   |   |   |--- class: 1
+|   |--- n_chain_pairs >  1.50
+|   |   |--- gain_AS <= 6.50
+|   |   |   |--- n_mod_pow2 <= 0.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- n_mod_pow2 >  0.50
+|   |   |   |   |--- class: 0
+|   |   |--- gain_AS >  6.50
+|   |   |   |--- gain_textbook_frac <= 0.56
+|   |   |   |   |--- class: 3
+|   |   |   |--- gain_textbook_frac >  0.56
+|   |   |   |   |--- class: 1
+|--- gain_SR >  6.50
+|   |--- n_chain_pairs <= 7.50
+|   |   |--- gain_DCE <= 3.50
+|   |   |   |--- gain_AS <= 1.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_AS >  1.50
+|   |   |   |   |--- class: 5
+|   |   |--- gain_DCE >  3.50
+|   |   |   |--- n_if_const <= 0.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_if_const >  0.50
+|   |   |   |   |--- class: 0
+|   |--- n_chain_pairs >  7.50
+|   |   |--- gain_SR <= 33.50
+|   |   |   |--- n_chain_pairs <= 11.50
+|   |   |   |   |--- class: 2
+|   |   |   |--- n_chain_pairs >  11.50
+|   |   |   |   |--- class: 2
+|   |   |--- gain_SR >  33.50
+|   |   |   |--- n_and <= 3.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_and >  3.50
+|   |   |   |   |--- class: 0

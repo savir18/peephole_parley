@@ -1,0 +1,139 @@
+{
+  "budget": 7,
+  "features": "full",
+  "winner": "Ridge (reg)",
+  "cv": {
+    "Best fixed pipeline": {
+      "mean_cost": 46.955625,
+      "mean_regret": 1.31625,
+      "optimal_rate": 0.35875,
+      "reduction_pct": 54.240973541879846,
+      "better_than_static": 0.0,
+      "worse_than_static": 0.0,
+      "gain_vs_static": 0.0,
+      "note": "portfolio entry 0 = best single pipeline over all candidates"
+    },
+    "DecisionTree (cls)": {
+      "mean_cost": 47.183125,
+      "mean_regret": 1.54375,
+      "optimal_rate": 0.570625,
+      "reduction_pct": 54.01927106173561,
+      "better_than_static": 0.375625,
+      "worse_than_static": 0.19125,
+      "gain_vs_static": -0.2275,
+      "seconds": 0.1
+    },
+    "RandomForest (cls)": {
+      "mean_cost": 46.703125,
+      "mean_regret": 1.06375,
+      "optimal_rate": 0.58,
+      "reduction_pct": 54.48703893193003,
+      "better_than_static": 0.396875,
+      "worse_than_static": 0.19375,
+      "gain_vs_static": 0.2525,
+      "seconds": 3.0
+    },
+    "HistGradBoost (cls)": {
+      "mean_cost": 46.68875,
+      "mean_regret": 1.049375,
+      "optimal_rate": 0.621875,
+      "reduction_pct": 54.501047605125954,
+      "better_than_static": 0.42375,
+      "worse_than_static": 0.163125,
+      "gain_vs_static": 0.266875,
+      "seconds": 14.1
+    },
+    "LogisticReg (cls)": {
+      "mean_cost": 46.578125,
+      "mean_regret": 0.93875,
+      "optimal_rate": 0.61875,
+      "reduction_pct": 54.60885348145983,
+      "better_than_static": 0.4325,
+      "worse_than_static": 0.15125,
+      "gain_vs_static": 0.3775,
+      "seconds": 7.8
+    },
+    "kNN (cls)": {
+      "mean_cost": 46.838125,
+      "mean_regret": 1.19875,
+      "optimal_rate": 0.5225,
+      "reduction_pct": 54.35547921843785,
+      "better_than_static": 0.349375,
+      "worse_than_static": 0.191875,
+      "gain_vs_static": 0.1175,
+      "seconds": 0.2
+    },
+    "Ridge (reg)": {
+      "mean_cost": 46.245625,
+      "mean_regret": 0.60625,
+      "optimal_rate": 0.6725,
+      "reduction_pct": 54.93288018320908,
+      "better_than_static": 0.42875,
+      "worse_than_static": 0.07,
+      "gain_vs_static": 0.71,
+      "seconds": 0.0
+    },
+    "DecisionTree (reg)": {
+      "mean_cost": 47.11125,
+      "mean_regret": 1.471875,
+      "optimal_rate": 0.49625,
+      "reduction_pct": 54.08931442771525,
+      "better_than_static": 0.305625,
+      "worse_than_static": 0.1975,
+      "gain_vs_static": -0.155625,
+      "seconds": 0.1
+    },
+    "RandomForest (reg)": {
+      "mean_cost": 46.49,
+      "mean_regret": 0.850625,
+      "optimal_rate": 0.581875,
+      "reduction_pct": 54.69473273887833,
+      "better_than_static": 0.33375,
+      "worse_than_static": 0.066875,
+      "gain_vs_static": 0.465625,
+      "seconds": 9.1
+    },
+    "kNN (reg)": {
+      "mean_cost": 46.625625,
+      "mean_regret": 0.98625,
+      "optimal_rate": 0.531875,
+      "reduction_pct": 54.5625639526385,
+      "better_than_static": 0.306875,
+      "worse_than_static": 0.095,
+      "gain_vs_static": 0.33,
+      "seconds": 0.0
+    }
+  },
+  "shallow_tree_cv": {
+    "mean_cost": 46.735625,
+    "mean_regret": 1.09625,
+    "optimal_rate": 0.5825,
+    "reduction_pct": 54.45536714905228,
+    "better_than_static": 0.409375,
+    "worse_than_static": 0.183125,
+    "gain_vs_static": 0.22
+  },
+  "ablation_winner": {
+    "structural only": {
+      "mean_cost": 46.28,
+      "mean_regret": 0.640625,
+      "optimal_rate": 0.654375,
+      "reduction_pct": 54.89938118208839,
+      "better_than_static": 0.419375,
+      "worse_than_static": 0.079375,
+      "gain_vs_static": 0.675625
+    },
+    "structural + probes": {
+      "mean_cost": 46.245625,
+      "mean_regret": 0.60625,
+      "optimal_rate": 0.6725,
+      "reduction_pct": 54.93288018320908,
+      "better_than_static": 0.42875,
+      "worse_than_static": 0.07,
+      "gain_vs_static": 0.71
+    }
+  },
+  "top_features": null,
+  "portfolio_best_mean_cost": 45.639375,
+  "base_mean_cost": 102.615
+}

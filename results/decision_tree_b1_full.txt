@@ -1,0 +1,59 @@
+Depth-4 decision tree (budget 1). Leaves are portfolio indices.
+Cross-validated mean cost 71.90 (best fixed pipeline 75.03)
+
+Portfolio:
+   0: DCE
+   1: SR
+   2: AS
+   3: CF
+   4: RS
+   5: CSE
+   6: CP
+   7: RA
+
+|--- shrink_DCE <= 4.50
+|   |--- gain_SR <= 4.50
+|   |   |--- gain_DCE <= 1.50
+|   |   |   |--- gain_CF <= 0.50
+|   |   |   |   |--- class: 4
+|   |   |   |--- gain_CF >  0.50
+|   |   |   |   |--- class: 3
+|   |   |--- gain_DCE >  1.50
+|   |   |   |--- gain_AS <= 4.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_AS >  4.50
+|   |   |   |   |--- class: 2
+|   |--- gain_SR >  4.50
+|   |   |--- gain_SR <= 11.00
+|   |   |   |--- gain_DCE <= 5.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- gain_DCE >  5.50
+|   |   |   |   |--- class: 0
+|   |   |--- gain_SR >  11.00
+|   |   |   |--- gain_AS <= 10.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- gain_AS >  10.50
+|   |   |   |   |--- class: 1
+|--- shrink_DCE >  4.50
+|   |--- gain_SR <= 27.50
+|   |   |--- gain_CSE_then_DCE <= 20.50
+|   |   |   |--- gain_SR <= 17.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_SR >  17.50
+|   |   |   |   |--- class: 1
+|   |   |--- gain_CSE_then_DCE >  20.50
+|   |   |   |--- gain_SR <= 24.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- gain_SR >  24.50
+|   |   |   |   |--- class: 0
+|   |--- gain_SR >  27.50
+|   |   |--- gain_DCE <= 36.50
+|   |   |   |--- gain_CP_then_DCE <= 32.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- gain_CP_then_DCE >  32.50
+|   |   |   |   |--- class: 1
+|   |   |--- gain_DCE >  36.50
+|   |   |   |--- n_div_pow2 <= 4.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- n_div_pow2 >  4.50
+|   |   |   |   |--- class: 1

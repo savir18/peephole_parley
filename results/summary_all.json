@@ -1,0 +1,322 @@
+[
+  {
+    "budget": 1,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 104.7975,
+      "random": 100.227375,
+      "best_fixed": 78.39,
+      "ml": 74.44,
+      "portfolio_oracle": 74.44,
+      "oracle": 74.44,
+      "worst": 106.505,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 26.3978216985118,
+      "ml": 30.10656776677151,
+      "oracle": 30.10656776677151,
+      "textbook": 1.6032111168489682
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 3.95,
+      "ci95": [
+        3.2174375,
+        4.7150625
+      ],
+      "better": 142,
+      "same": 258,
+      "worse": 0
+    },
+    "headroom_fixed_vs_oracle": 3.950000000000003,
+    "headroom_recovered_pct": 99.99999999999993,
+    "ml_optimal_rate": 1.0,
+    "fixed_optimal_rate": 0.645,
+    "static_pipeline": "DCE",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 2,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 101.3375,
+      "random": 93.639625,
+      "best_fixed": 66.2,
+      "ml": 62.62,
+      "portfolio_oracle": 62.5175,
+      "oracle": 62.505,
+      "worst": 106.4975,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 37.84329374207783,
+      "ml": 41.20463827989296,
+      "oracle": 41.312614431247354,
+      "textbook": 4.851884888033419
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 3.58,
+      "ci95": [
+        2.8924375,
+        4.365
+      ],
+      "better": 178,
+      "same": 217,
+      "worse": 5
+    },
+    "headroom_fixed_vs_oracle": 3.6950000000000003,
+    "headroom_recovered_pct": 96.88768606224627,
+    "ml_optimal_rate": 0.9425,
+    "fixed_optimal_rate": 0.5325,
+    "static_pipeline": "SR > DCE",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 3,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 86.0325,
+      "random": 87.13662500000001,
+      "best_fixed": 62.4925,
+      "ml": 56.51,
+      "portfolio_oracle": 55.22,
+      "oracle": 55.145,
+      "worst": 106.345,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 41.32435096943805,
+      "ml": 46.94145814750481,
+      "oracle": 48.223088117928725,
+      "textbook": 19.222102248720716
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 5.9825,
+      "ci95": [
+        5.1149375,
+        6.945062500000001
+      ],
+      "better": 273,
+      "same": 112,
+      "worse": 15
+    },
+    "headroom_fixed_vs_oracle": 7.347499999999997,
+    "headroom_recovered_pct": 81.42225246682548,
+    "ml_optimal_rate": 0.7225,
+    "fixed_optimal_rate": 0.2375,
+    "static_pipeline": "RA > SR > DCE",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 4,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 86.0325,
+      "random": 80.793375,
+      "best_fixed": 55.5925,
+      "ml": 52.1225,
+      "portfolio_oracle": 51.135,
+      "oracle": 50.9075,
+      "worst": 105.74,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 47.80292005070185,
+      "ml": 51.06098305243884,
+      "oracle": 52.201774564574436,
+      "textbook": 19.222102248720716
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 3.47,
+      "ci95": [
+        2.9349375,
+        4.0050625
+      ],
+      "better": 217,
+      "same": 166,
+      "worse": 17
+    },
+    "headroom_fixed_vs_oracle": 4.685000000000002,
+    "headroom_recovered_pct": 74.06616862326571,
+    "ml_optimal_rate": 0.5775,
+    "fixed_optimal_rate": 0.1975,
+    "static_pipeline": "CP > CF > SR > DCE",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 5,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 85.99,
+      "random": 74.267,
+      "best_fixed": 52.1925,
+      "ml": 49.775,
+      "portfolio_oracle": 49.0325,
+      "oracle": 48.66,
+      "worst": 104.1475,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 50.99525843857096,
+      "ml": 53.26510492465142,
+      "oracle": 54.312004131261446,
+      "textbook": 19.262006478569084
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 2.4175,
+      "ci95": [
+        2.09,
+        2.755
+      ],
+      "better": 233,
+      "same": 154,
+      "worse": 13
+    },
+    "headroom_fixed_vs_oracle": 3.532500000000006,
+    "headroom_recovered_pct": 68.4359518754422,
+    "ml_optimal_rate": 0.495,
+    "fixed_optimal_rate": 0.2025,
+    "static_pipeline": "RA > CP > CF > DCE > SR",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 6,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 84.675,
+      "random": 68.00574999999999,
+      "best_fixed": 49.495,
+      "ml": 48.44,
+      "portfolio_oracle": 47.815,
+      "oracle": 47.595,
+      "worst": 100.42,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 53.528003380123,
+      "ml": 54.518567203417675,
+      "oracle": 55.31195718510868,
+      "textbook": 20.496690296230224
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 1.055,
+      "ci95": [
+        0.8975,
+        1.2275
+      ],
+      "better": 192,
+      "same": 192,
+      "worse": 16
+    },
+    "headroom_fixed_vs_oracle": 1.8999999999999986,
+    "headroom_recovered_pct": 55.52631578947373,
+    "ml_optimal_rate": 0.5725,
+    "fixed_optimal_rate": 0.2925,
+    "static_pipeline": "RA > AS > CP > CF > DCE > SR",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 7,
+    "model": "Ridge (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 83.5775,
+      "random": 61.542625,
+      "best_fixed": 48.6125,
+      "ml": 47.815,
+      "portfolio_oracle": 47.2625,
+      "oracle": 47.205,
+      "worst": 88.405,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 54.35660297638609,
+      "ml": 55.105394112952446,
+      "oracle": 55.67813717665837,
+      "textbook": 21.527158349373266
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 0.7975,
+      "ci95": [
+        0.65,
+        0.95
+      ],
+      "better": 182,
+      "same": 191,
+      "worse": 27
+    },
+    "headroom_fixed_vs_oracle": 1.4074999999999989,
+    "headroom_recovered_pct": 56.66074600355245,
+    "ml_optimal_rate": 0.6725,
+    "fixed_optimal_rate": 0.3525,
+    "static_pipeline": "RA > AS > CP > CF > DCE > SR > CSE",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  },
+  {
+    "budget": 8,
+    "model": "RandomForest (reg)",
+    "n_test": 400,
+    "mean_cost": {
+      "none": 106.505,
+      "textbook": 52.0775,
+      "random": 55.20387500000001,
+      "best_fixed": 47.7625,
+      "ml": 47.55,
+      "portfolio_oracle": 47.1375,
+      "oracle": 47.1375,
+      "worst": 61.1275,
+      "fixpoint_textbook": 46.3075
+    },
+    "fixpoint_mean_rule_executions": 24.68,
+    "reduction_pct": {
+      "best_fixed": 55.15468757335336,
+      "ml": 55.354208722595175,
+      "oracle": 55.74151448288812,
+      "textbook": 51.10323458992535
+    },
+    "ml_vs_fixed": {
+      "mean_gain": 0.2125,
+      "ci95": [
+        0.1425,
+        0.2875
+      ],
+      "better": 56,
+      "same": 337,
+      "worse": 7
+    },
+    "headroom_fixed_vs_oracle": 0.625,
+    "headroom_recovered_pct": 34.0,
+    "ml_optimal_rate": 0.7625,
+    "fixed_optimal_rate": 0.6575,
+    "static_pipeline": "AS > RA > CP > CF > DCE > RS > CSE > SR",
+    "equivalence_failures": 0,
+    "equivalence_checked": 400
+  }
+]

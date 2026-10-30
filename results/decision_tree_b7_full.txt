@@ -1,0 +1,67 @@
+Depth-4 decision tree (budget 7). Leaves are portfolio indices.
+Cross-validated mean cost 46.74 (best fixed pipeline 46.96)
+
+Portfolio:
+   0: RA > AS > CP > CF > DCE > SR > CSE
+   1: CF > CP > AS > RA > SR > DCE > RS
+   2: CSE > AS > CP > CF > DCE > RS > SR
+   3: CP > CF > RA > AS > SR > DCE > RS
+   4: CF > CP > AS > DCE > CSE > SR > RS
+   5: CSE > CF > RA > CP > SR > AS > DCE
+   6: AS > CP > RA > RS > DCE > CSE > SR
+   7: CP > CF > AS > DCE > CSE > RS > SR
+   8: CF > AS > CP > RA > DCE > CSE > SR
+   9: CSE > AS > RA > CP > SR > CF > DCE
+  10: CSE > AS > RA > CP > CF > DCE > RS
+  11: CF > RS > AS > DCE > CP > CSE > SR
+  12: CF > AS > RA > RS > CP > SR > DCE
+  13: CP > CF > RA > DCE > CSE > AS > SR
+  14: SR > CP > RA > CF > DCE > CSE > RS
+  15: AS > RA > CP > CF > DCE > SR > RS
+
+|--- n_bin_const_const <= 0.50
+|   |--- n_cse_pairs <= 0.50
+|   |   |--- n_bin_var_var <= 12.50
+|   |   |   |--- n_and <= 1.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_and >  1.50
+|   |   |   |   |--- class: 15
+|   |   |--- n_bin_var_var >  12.50
+|   |   |   |--- n_add <= 10.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_add >  10.50
+|   |   |   |   |--- class: 15
+|   |--- n_cse_pairs >  0.50
+|   |   |--- gain_RS <= 1.50
+|   |   |   |--- n_asg_copy <= 0.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_asg_copy >  0.50
+|   |   |   |   |--- class: 0
+|   |   |--- gain_RS >  1.50
+|   |   |   |--- n_chain_pairs <= 1.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_chain_pairs >  1.50
+|   |   |   |   |--- class: 15
+|--- n_bin_const_const >  0.50
+|   |--- n_asg_const <= 0.50
+|   |   |--- n_cse_pairs <= 0.50
+|   |   |   |--- n_bin_var_var <= 14.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- n_bin_var_var >  14.50
+|   |   |   |   |--- class: 1
+|   |   |--- n_cse_pairs >  0.50
+|   |   |   |--- n_instr <= 58.00
+|   |   |   |   |--- class: 5
+|   |   |   |--- n_instr >  58.00
+|   |   |   |   |--- class: 8
+|   |--- n_asg_const >  0.50
+|   |   |--- n_bin_var_var <= 20.50
+|   |   |   |--- n_bin_const_const <= 1.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_bin_const_const >  1.50
+|   |   |   |   |--- class: 15
+|   |   |--- n_bin_var_var >  20.50
+|   |   |   |--- n_add <= 19.50
+|   |   |   |   |--- class: 15
+|   |   |   |--- n_add >  19.50
+|   |   |   |   |--- class: 0
